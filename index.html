@@ -271,6 +271,72 @@
       #wk {
         overflow-x: auto;
       }
+      .rm {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        margin: 14px 0 6px;
+      }
+      .rm .ph {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-top: 6px solid var(--blue);
+        border-radius: 10px;
+        padding: 14px 14px 12px;
+        display: flex;
+        flex-direction: column;
+      }
+      .rm .ph .d {
+        color: var(--sub);
+        font-weight: 700;
+      }
+      .rm .ph .n {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.4;
+        margin: 2px 0 6px;
+      }
+      .rm .ph ul {
+        margin: 0 0 10px;
+        padding-left: 1.1em;
+        line-height: 1.6;
+      }
+      .rm .ph li {
+        margin: 4px 0;
+      }
+      .rm .ph .k {
+        margin-top: auto;
+        background: var(--soft);
+        border-radius: 8px;
+        padding: 8px 10px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+      table.wide {
+        min-width: 900px;
+      }
+      table.wide td:first-child {
+        white-space: nowrap;
+      }
+      tr.grp td {
+        background: var(--navy);
+        color: #fff;
+        font-weight: 700;
+        text-align: left;
+      }
+      @media (max-width: 900px) {
+        .rm {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 760px) {
+        .scroll table {
+          min-width: 660px;
+        }
+        .scroll table.wide {
+          min-width: 900px;
+        }
+      }
       #wk svg {
         min-width: 780px;
       }
@@ -337,6 +403,510 @@
         稼働中のキャンペーンは「Vella202603」（検索・目標コンバージョン単価・日予算33,000円）の1本のみ。月55件は「月予算約100万円
         ÷ 目標CPA 18,100円」の計算値です。
       </p>
+
+      <h2>追記：12月の目標に対する見立て（CPA最優先）</h2>
+      <div class="card verdict">
+        <p class="lead">
+          エントリーCPA
+          16,414円は、7月の実績（16,609円）とほぼ同じ水準で、届く数字です。ただし12月の月平均での達成は難しく、12月は2万円台前半、1.6万円台は早くて1月という見立てです。コンバージョン134件は、現在の予算では届きません。
+        </p>
+      </div>
+      <div class="card">
+        <h3>ご提示の目標と実績の比較</h3>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th>項目</th>
+              <th>12月の目標</th>
+              <th>7月</th>
+              <th>期間平均</th>
+              <th>11月（20日まで）</th>
+            </tr>
+            <tr>
+              <td>エントリーCPA</td>
+              <td><b>16,414円</b></td>
+              <td class="good">16,609円</td>
+              <td>27,136円</td>
+              <td class="bad">41,241円</td>
+            </tr>
+            <tr>
+              <td>コンバージョン（月）</td>
+              <td><b>134件</b></td>
+              <td>60件</td>
+              <td>約31件</td>
+              <td class="bad">11件（月換算 約17件）</td>
+            </tr>
+            <tr>
+              <td>必要なCVR（クリック単価970円の場合）</td>
+              <td><b>5.91%</b></td>
+              <td class="good">5.77%</td>
+              <td>3.58%</td>
+              <td class="bad">2.36%</td>
+            </tr>
+            <tr>
+              <td>費用（月）</td>
+              <td><b>約220万円</b>（逆算）</td>
+              <td>約100万円</td>
+              <td>約85万円</td>
+              <td>月換算 約70万円</td>
+            </tr>
+            <tr>
+              <td>営業CPA</td>
+              <td><b>174,696円</b></td>
+              <td colspan="3" class="l">
+                管理画面に営業のデータがなく、現状は分かりません
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p class="note">
+          目標の費用は「134件 ×
+          16,414円」の逆算です。営業の件数は逆算で月12〜13件、エントリーから営業への転換率は9.4%（16,414円
+          ÷ 174,696円）が前提になります。
+        </p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>エントリーCPA：届くが、12月の月平均では難しい</h3>
+          <p>
+            11月の41,241円から6割下げる必要があります。自動入札は設定を固定してから落ち着くまでに2週間ほどかかるため、12月前半は高い週が残ります。仮に第1週が35,000円のままだと、残りの期間を約14,000円で走らないと月平均16,414円になりません。
+          </p>
+        </div>
+        <div class="card">
+          <h3>コンバージョン134件：予算が足りない</h3>
+          <p>
+            日予算33,000円では月の上限が約102万円で、目標CPAを達成しても最大62件です。134件には月約220万円（日約71,000円）が必要です。7月でも60件でした。CPAを最優先にするなら、12月は件数ではなくCPAで評価するのが妥当です。
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>CPAを最短で下げる材料：費用の6割がCPA約4万円の語に流れている</h3>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th>区分</th>
+              <th>費用</th>
+              <th>費用の割合</th>
+              <th>CV</th>
+              <th>CPA</th>
+            </tr>
+            <tr>
+              <td>CPA 24,000円以下のキーワード16本</td>
+              <td>1,488,634円</td>
+              <td>37%</td>
+              <td>84.33件</td>
+              <td class="good">17,653円</td>
+            </tr>
+            <tr>
+              <td>それ以外のすべて</td>
+              <td>2,500,334円</td>
+              <td>63%</td>
+              <td>62.67件</td>
+              <td class="bad">39,897円</td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          16本の内訳：フリー ランス 仕事
+          在宅（削除済み）、アットエンジニア（停止中）、python リモート
+          案件、レバテックフリーランス、フリーランスエンジニア 転職、フリー
+          ランス エンジニア 仕事 探し、flutter、フル リモート it 求人、業務委託
+          高単価、フリーランス エンジニア
+          案件、フォスターフリーランス、プログラマー 求人、mijica
+          フリーランス、ココナラテックエージェント、業務委託 案件
+          it、ITプロパートナーズ。
+        </p>
+        <p>
+          CPAを優先するなら、成績の悪い側の費用を止めるだけで、学習を待たずに全体のCPAが下がります。その代わり件数は減ります。上の16本だけだと月あたり約18件・費用約32万円の規模です。
+        </p>
+        <p class="note">
+          <span class="pill pe">注意</span
+          >結果を見てから成績の良い語を選んでいるため、同じ数字が続く保証はありません。件数の少ない語は偶然の上振れを含みます。
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>12月の見通し</h3>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th class="l">進め方</th>
+              <th>エントリーCPA（月平均）</th>
+              <th>コンバージョン</th>
+              <th>費用</th>
+            </tr>
+            <tr>
+              <td class="l">何も変えない</td>
+              <td class="bad">3.6〜4.1万円</td>
+              <td>15〜20件</td>
+              <td>約70万円</td>
+            </tr>
+            <tr>
+              <td class="l">下の手順を12/1までに実行</td>
+              <td class="warn">2.0〜2.6万円</td>
+              <td>25〜45件</td>
+              <td>60〜100万円</td>
+            </tr>
+            <tr>
+              <td class="l">ご提示の目標</td>
+              <td><b>16,414円</b></td>
+              <td><b>134件</b></td>
+              <td>約220万円</td>
+            </tr>
+          </table>
+        </div>
+        <p class="note">
+          <span class="pill pe">推定</span
+          >上2行は筆者の見込みで、実測ではありません。年末（12/28以降）は検索と登録の動きが変わるため、幅を広めに取っています。
+        </p>
+      </div>
+
+      <h2>ロードマップ：目標数値に到達するまでの具体的なアクション</h2>
+      <div class="card">
+        <p class="lead">
+          順番は「単価を下げる →
+          下がった単価を保ったまま予算を増やす」です。エントリーCPA
+          16,414円は1月後半、134件は予算を月約220万円まで段階的に増やした4月ごろが、早い場合の到達時期です。
+        </p>
+        <div class="rm">
+          <div class="ph" style="border-top-color: #8a94a8">
+            <div class="d">11/21〜11/30</div>
+            <div class="n">① 準備</div>
+            <ul>
+              <li>計測を照合して直す</li>
+              <li>主力キーワードを戻す</li>
+              <li>成績の悪い語を止める</li>
+              <li>除外リストを入れる</li>
+            </ul>
+            <div class="k">12/1に正しい状態で走り出す</div>
+          </div>
+          <div class="ph">
+            <div class="d">12/1〜12/14</div>
+            <div class="n">② 固定</div>
+            <ul>
+              <li>入札・予算・リンク先を触らない</li>
+              <li>週1回、検索語句を除外</li>
+            </ul>
+            <div class="k">CPA 28,000円以下</div>
+          </div>
+          <div class="ph">
+            <div class="d">12/15〜12/28</div>
+            <div class="n">③ 引き下げ</div>
+            <ul>
+              <li>目標CPAを24,000円へ</li>
+              <li>新しい着地ページを制作</li>
+              <li>広告の1回目の判定</li>
+            </ul>
+            <div class="k">CPA 24,000円以下</div>
+          </div>
+          <div class="ph" style="border-top-color: #1c8a55">
+            <div class="d">1/5〜1/31</div>
+            <div class="n">④ 到達</div>
+            <ul>
+              <li>目標CPAを20,000円へ</li>
+              <li>新ページを50%ずつ比較</li>
+              <li>営業の件数を取り込む</li>
+            </ul>
+            <div class="k">月後半の週で16,414円以下</div>
+          </div>
+          <div class="ph" style="border-top-color: #b86e00">
+            <div class="d">2月〜4月</div>
+            <div class="n">⑤ 拡大</div>
+            <ul>
+              <li>2週間ごとに予算を20%増</li>
+              <li>成績の良い語を増やす</li>
+            </ul>
+            <div class="k">月134件</div>
+          </div>
+        </div>
+        <p class="note">
+          12/29〜1/4の年末年始は、設定を何も変えない期間とします。
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>月ごとの到達見込み</h3>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th>月</th>
+              <th>エントリーCPA</th>
+              <th>コンバージョン</th>
+              <th>費用</th>
+              <th class="l">日予算</th>
+              <th class="l">進む条件</th>
+            </tr>
+            <tr>
+              <td>12月</td>
+              <td>2.0〜2.6万円</td>
+              <td>25〜45件</td>
+              <td>60〜100万円</td>
+              <td class="l">33,000円（据え置き）</td>
+              <td class="l">準備の8項目を11/30までに終える</td>
+            </tr>
+            <tr>
+              <td>1月</td>
+              <td>1.7〜2.0万円</td>
+              <td>45〜60件</td>
+              <td>約100万円</td>
+              <td class="l">33,000円（据え置き）</td>
+              <td class="l">直近2週間のCPAが20,000円以下</td>
+            </tr>
+            <tr>
+              <td>2月</td>
+              <td>1.6〜1.8万円</td>
+              <td>60〜80件</td>
+              <td>120〜135万円</td>
+              <td class="l">40,000 → 48,000円</td>
+              <td class="l">CPA 18,000円以下が2週間続く</td>
+            </tr>
+            <tr>
+              <td>3月</td>
+              <td>1.6〜1.8万円</td>
+              <td>85〜110件</td>
+              <td>160〜195万円</td>
+              <td class="l">57,000 → 68,000円</td>
+              <td class="l">同上（続かなければ据え置き）</td>
+            </tr>
+            <tr>
+              <td><b>4月</b></td>
+              <td class="good">16,414円</td>
+              <td class="good">134件</td>
+              <td>約220万円</td>
+              <td class="l">71,000円</td>
+              <td class="l">同上</td>
+            </tr>
+          </table>
+        </div>
+        <p class="note">
+          <span class="pill pe">推定</span
+          >筆者の見込みで、実測ではありません。予算を増やすとCPAは上がりやすく、増額のたびに条件を満たせなければ到達は後ろにずれます。検索する人の数が足りず、予算を増やしてもクリックが増えなくなった場合は、検索以外の配信面の追加を検討します。
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>アクション一覧（期日・場所・完了の確認つき）</h3>
+        <div class="scroll">
+          <table class="wide">
+            <tr>
+              <th>期日</th>
+              <th class="l">やること</th>
+              <th class="l">管理画面の場所</th>
+              <th class="l">完了の確認</th>
+              <th class="l">効く数字</th>
+            </tr>
+            <tr class="grp">
+              <td colspan="5">① 準備（11/21〜11/30）</td>
+            </tr>
+            <tr>
+              <td>11/25</td>
+              <td class="l">
+                社内の登録件数と管理画面のコンバージョンを、7〜11月の月別に照合する
+              </td>
+              <td class="l">目標＞コンバージョン</td>
+              <td class="l">差が1割以内、または差の原因が分かっている</td>
+              <td class="l">CPA</td>
+            </tr>
+            <tr>
+              <td>11/25</td>
+              <td class="l">
+                「登録完了(Mypage/initial)」の「要確認」を解消する。「企業開拓
+                申し込み完了」をサブの目標に変える
+              </td>
+              <td class="l">目標＞コンバージョン＞概要</td>
+              <td class="l">ステータスが「記録中」</td>
+              <td class="l">CPA</td>
+            </tr>
+            <tr>
+              <td>11/27</td>
+              <td class="l">
+                「フリーランス 仕事
+                在宅」をフレーズ一致で追加する。社名で検索して広告が出るか確かめ、出なければ「アットエンジニア」の完全一致を有効にする
+              </td>
+              <td class="l">キーワード（顕在_リモート案件／指名検索）</td>
+              <td class="l">2語とも「有効」、社名検索で広告が表示される</td>
+              <td class="l">CPA・件数</td>
+            </tr>
+            <tr>
+              <td>11/27</td>
+              <td class="l">
+                除外リストを3本作り、キャンペーンに適用する（転職・求人媒体名／クラウドソーシング名／エンジニア以外の職種）
+              </td>
+              <td class="l">ツール＞共有ライブラリ＞除外キーワード リスト</td>
+              <td class="l">3本とも Vella202603 に適用済み</td>
+              <td class="l">CPA・営業CPA</td>
+            </tr>
+            <tr>
+              <td>11/28</td>
+              <td class="l">
+                CPA
+                35,000円超の語と、費用1万円以上でコンバージョン0件の語を一時停止する。Javaグループを停止する
+              </td>
+              <td class="l">キーワード／広告グループ</td>
+              <td class="l">該当の語がすべて「一時停止」</td>
+              <td class="l">CPA</td>
+            </tr>
+            <tr>
+              <td>11/28</td>
+              <td class="l">最適化案の自動適用をすべてオフにする</td>
+              <td class="l">最適化案＞自動適用</td>
+              <td class="l">有効な項目が0件</td>
+              <td class="l">CPA</td>
+            </tr>
+            <tr>
+              <td>11/30</td>
+              <td class="l">
+                案件探し・リモート案件・競合の3グループに、切り口の違う広告を1本ずつ追加する。サイトリンク4本とコールアウト4本を追加する
+              </td>
+              <td class="l">広告／アセット</td>
+              <td class="l">3グループとも広告が2本</td>
+              <td class="l">CPA</td>
+            </tr>
+            <tr>
+              <td>11/30</td>
+              <td class="l">
+                エントリーから営業に進んだ件数を、広告グループ別かキーワード別に出せるか確認する
+              </td>
+              <td class="l">HubSpot（社内）</td>
+              <td class="l">11月分の表が1枚ある</td>
+              <td class="l">営業CPA</td>
+            </tr>
+            <tr class="grp">
+              <td colspan="5">② 固定（12/1〜12/14）</td>
+            </tr>
+            <tr>
+              <td>12/1〜14</td>
+              <td class="l">
+                入札戦略・目標CPA（28,000円）・予算・リンク先を変更しない
+              </td>
+              <td class="l">—</td>
+              <td class="l">変更履歴に該当の変更が0件</td>
+              <td class="l">CPA</td>
+            </tr>
+            <tr>
+              <td>毎週月曜</td>
+              <td class="l">
+                検索語句のクリック上位50件を見て、関係の薄い語を除外リストに足す
+              </td>
+              <td class="l">分析情報とレポート＞検索語句</td>
+              <td class="l">週1回の記録が残っている</td>
+              <td class="l">CPA・営業CPA</td>
+            </tr>
+            <tr class="grp">
+              <td colspan="5">③ 引き下げ（12/15〜12/28）</td>
+            </tr>
+            <tr>
+              <td>12/15</td>
+              <td class="l">
+                直近2週間のCPAが24,000円以下なら、目標CPAを24,000円にする。超えていたら据え置き、停止と除外をもう一度見直す
+              </td>
+              <td class="l">キャンペーンの設定＞単価設定</td>
+              <td class="l">変更は1回だけ</td>
+              <td class="l">CPA</td>
+            </tr>
+            <tr>
+              <td>12/15〜26</td>
+              <td class="l">
+                広告グループ別の着地ページ3種（案件探し・リモート・高単価）を作り、登録フォームを2段階にする
+              </td>
+              <td class="l">サイト側</td>
+              <td class="l">3ページが公開できる状態</td>
+              <td class="l">CPA</td>
+            </tr>
+            <tr>
+              <td>12/22</td>
+              <td class="l">
+                広告の1回目の判定。表示3,000回または3週間で、負けた方を次の案に差し替える
+              </td>
+              <td class="l">広告</td>
+              <td class="l">判定の記録が残っている</td>
+              <td class="l">CPA</td>
+            </tr>
+            <tr class="grp">
+              <td colspan="5">④ 到達（1/5〜1/31）</td>
+            </tr>
+            <tr>
+              <td>1/5</td>
+              <td class="l">
+                直近2週間のCPAが20,000円以下なら、目標CPAを20,000円にする（7月と同じ設定）
+              </td>
+              <td class="l">キャンペーンの設定＞単価設定</td>
+              <td class="l">変更は1回だけ</td>
+              <td class="l">CPA</td>
+            </tr>
+            <tr>
+              <td>1/5〜</td>
+              <td class="l">
+                新しい着地ページと今のページを、テスト機能で50%ずつ4週間くらべる
+              </td>
+              <td class="l">キャンペーン＞テスト</td>
+              <td class="l">テストが稼働中</td>
+              <td class="l">CPA</td>
+            </tr>
+            <tr>
+              <td>1月中</td>
+              <td class="l">
+                営業に進んだ登録を、コンバージョンとして管理画面に取り込む
+              </td>
+              <td class="l">目標＞コンバージョン（HubSpot連携）</td>
+              <td class="l">営業の件数が管理画面に出る</td>
+              <td class="l">営業CPA</td>
+            </tr>
+            <tr class="grp">
+              <td colspan="5">⑤ 拡大（2月〜4月）</td>
+            </tr>
+            <tr>
+              <td>2/2〜</td>
+              <td class="l">
+                CPA 18,000円以下が2週間続いたら、日予算を20%増やす（33,000 →
+                40,000 → 48,000 → 57,000 → 68,000 →
+                71,000円）。続かなければ据え置く
+              </td>
+              <td class="l">キャンペーン＞予算</td>
+              <td class="l">増額は2週間に1回まで</td>
+              <td class="l">件数</td>
+            </tr>
+            <tr>
+              <td>2月〜</td>
+              <td class="l">
+                成績の良い語を完全一致・フレーズ一致で増やす。停止中の言語別グループを1つずつ再開する
+              </td>
+              <td class="l">キーワード／広告グループ</td>
+              <td class="l">再開は月2グループまで</td>
+              <td class="l">件数</td>
+            </tr>
+          </table>
+        </div>
+        <p class="note">
+          鈴木さんのアカウント権限は読み取り専用のため、設定の変更は運用担当の方が行う前提です。
+        </p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>この期間にやらないこと</h3>
+          <ul>
+            <li>
+              入札戦略の種類を変える（クリック数の最大化などへ切り替えない）
+            </li>
+            <li>目標CPAを2週間のうちに2回動かす</li>
+            <li>
+              目標CPAを一気に20,000円へ下げる（10月に実績が悪いまま下げたときは、週のクリックが37まで落ちました）
+            </li>
+            <li>予算を上げたり下げたりする</li>
+            <li>リンク先を日付で切り替える（比べるときはテスト機能を使う）</li>
+            <li>複数の変更を同じ日にまとめて入れる</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>営業CPA 174,696円について</h3>
+          <p>
+            エントリーCPAが16,414円のとき、エントリーの9.4%が営業に進めば達成です。エントリーCPAが20,000円なら11.4%が必要です。まず今の転換率を測り、営業につながる語とつながらない語を分けるところから始めます。転職媒体名や職種違いの語からの登録は営業に進みにくいと考えられるため、除外リストは営業CPAにも効く見込みです。
+          </p>
+        </div>
+      </div>
 
       <h2>2. 現状：7月を境に何が起きたか</h2>
       <div class="card">

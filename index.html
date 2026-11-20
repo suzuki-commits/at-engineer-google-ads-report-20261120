@@ -1,0 +1,1277 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>アットエンジニア Google広告 改善レポート（2026年11月20日）</title>
+    <style>
+      :root {
+        --ink: #16233a;
+        --sub: #52607a;
+        --line: #d9e0ec;
+        --bg: #f4f6fa;
+        --card: #fff;
+        --navy: #12305e;
+        --blue: #1f6fd6;
+        --red: #c8372d;
+        --green: #1c8a55;
+        --amber: #b86e00;
+        --soft: #eaf1fb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          "Hiragino Sans", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+        font-size: 17px;
+        line-height: 1.8;
+      }
+      .wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 20px 80px;
+      }
+      header {
+        background: var(--navy);
+        color: #fff;
+        padding: 44px 20px 40px;
+      }
+      header .in {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      header .tag {
+        font-size: 15px;
+        letter-spacing: 0.08em;
+        opacity: 0.8;
+      }
+      header h1 {
+        font-size: 34px;
+        line-height: 1.35;
+        margin: 10px 0 12px;
+      }
+      header p {
+        margin: 0;
+        font-size: 17px;
+        opacity: 0.9;
+      }
+      h2 {
+        font-size: 27px;
+        line-height: 1.4;
+        margin: 56px 0 16px;
+        padding-left: 14px;
+        border-left: 6px solid var(--blue);
+      }
+      h3 {
+        font-size: 21px;
+        margin: 28px 0 10px;
+      }
+      p {
+        margin: 10px 0;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 22px 24px;
+        margin: 16px 0;
+      }
+      .lead {
+        font-size: 19px;
+        font-weight: 600;
+      }
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin: 18px 0;
+      }
+      .kpi {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 16px 18px;
+      }
+      .kpi .l {
+        font-size: 15px;
+        color: var(--sub);
+      }
+      .kpi .v {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      .kpi .t {
+        font-size: 15px;
+        color: var(--blue);
+        font-weight: 600;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        margin: 10px 0;
+      }
+      th,
+      td {
+        padding: 9px 10px;
+        border-bottom: 1px solid var(--line);
+        text-align: right;
+        vertical-align: top;
+      }
+      th {
+        background: var(--soft);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+      td.l,
+      th.l {
+        text-align: left;
+      }
+      .scroll {
+        overflow-x: auto;
+      }
+      .good {
+        color: var(--green);
+        font-weight: 700;
+      }
+      .bad {
+        color: var(--red);
+        font-weight: 700;
+      }
+      .warn {
+        color: var(--amber);
+        font-weight: 700;
+      }
+      .note {
+        font-size: 15px;
+        color: var(--sub);
+      }
+      .pill {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 2px 10px;
+        margin-right: 6px;
+        vertical-align: middle;
+      }
+      .pf {
+        background: #e3f4ea;
+        color: var(--green);
+      }
+      .pe {
+        background: #fdf0dc;
+        color: var(--amber);
+      }
+      .cause {
+        border-left: 6px solid var(--red);
+      }
+      .cause h3 {
+        margin-top: 0;
+      }
+      .verdict {
+        border: 2px solid var(--blue);
+        background: #f7faff;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      ol.steps {
+        padding-left: 1.3em;
+        margin: 8px 0;
+      }
+      ol.steps li {
+        margin: 8px 0;
+      }
+      .phase {
+        border-left: 6px solid var(--blue);
+      }
+      .phase .when {
+        font-size: 15px;
+        color: var(--blue);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+      .phase h3 {
+        margin: 2px 0 8px;
+      }
+      svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .legend {
+        font-size: 15px;
+        color: var(--sub);
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        margin-top: 6px;
+      }
+      .legend i {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 3px;
+        margin-right: 6px;
+        vertical-align: -2px;
+      }
+      @media (max-width: 760px) {
+        .kpis {
+          grid-template-columns: 1fr 1fr;
+        }
+        .grid2 {
+          grid-template-columns: 1fr;
+        }
+        header h1 {
+          font-size: 27px;
+        }
+        h2 {
+          font-size: 24px;
+        }
+        .kpi .v {
+          font-size: 25px;
+        }
+        .card {
+          padding: 18px 16px;
+        }
+      }
+      /* 視認性基準: 本文17px以上・見出し24px以上 */
+      h2 {
+        font-size: 29px;
+      }
+      h3 {
+        font-size: 24px;
+        line-height: 1.45;
+      }
+      table {
+        font-size: 17px;
+      }
+      header .tag,
+      .kpi .l,
+      .kpi .t,
+      .note,
+      .legend,
+      .pill,
+      .phase .when {
+        font-size: 17px;
+      }
+      #wk {
+        overflow-x: auto;
+      }
+      #wk svg {
+        min-width: 780px;
+      }
+      @media (max-width: 760px) {
+        h2 {
+          font-size: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="in">
+        <div class="tag">GOOGLE ADS IMPROVEMENT REPORT</div>
+        <h1>アットエンジニア Google広告 改善レポート</h1>
+        <p>
+          目標：コンバージョン率 1.5倍 ／ CPA 3分の2 ／ コンバージョン数
+          最大化　｜　分析対象：2026年7月1日〜11月20日　｜　作成：2026年11月20日
+        </p>
+      </div>
+    </header>
+    <div class="wrap">
+      <h2>1. 結論</h2>
+      <div class="card">
+        <p class="lead">
+          目標の水準は、今年7月に同じアカウントで既に出ていました（CVR
+          5.77%・CPA
+          16,609円）。やるべきことは「新しい打ち手を探す」より先に「7月の状態に戻して固定する」ことです。
+        </p>
+        <p>
+          コンバージョン率（CVR）を1.5倍にすると、クリック単価が同じなら CPA
+          は自動的に3分の2になります。つまり目標は実質1つで、<b
+            >CVR 3.58% → 5.4%（クリック単価 970円を維持）</b
+          >です。
+        </p>
+        <p>
+          8月以降に悪化した要因として管理画面から確認できたのは、①入札戦略の頻繁な切り替え（約3か月で15回）、②キャンペーン終了日切れによる配信停止（8月に2回）、③成果の出ていたキーワードの削除・停止、④関係の薄い検索語句への配信、の4つです。クリエイティブ（広告文）の更新頻度は確かに低いものの、それだけでは目標に届かない、というのが検証結果です（5章）。
+        </p>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi">
+          <div class="l">CVR（期間平均）</div>
+          <div class="v">3.58%</div>
+          <div class="t">目標 5.4%</div>
+        </div>
+        <div class="kpi">
+          <div class="l">CPA（期間平均）</div>
+          <div class="v">27,136円</div>
+          <div class="t">目標 18,100円</div>
+        </div>
+        <div class="kpi">
+          <div class="l">コンバージョン数</div>
+          <div class="v">147件</div>
+          <div class="t">月平均 約31件 → 目標 月55件</div>
+        </div>
+        <div class="kpi">
+          <div class="l">費用</div>
+          <div class="v">399万円</div>
+          <div class="t">クリック 4,111 ／ 単価 970円</div>
+        </div>
+      </div>
+      <p class="note">
+        稼働中のキャンペーンは「Vella202603」（検索・目標コンバージョン単価・日予算33,000円）の1本のみ。月55件は「月予算約100万円
+        ÷ 目標CPA 18,100円」の計算値です。
+      </p>
+
+      <h2>2. 現状：7月を境に何が起きたか</h2>
+      <div class="card">
+        <h3>月別の実績</h3>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th>月</th>
+              <th>費用</th>
+              <th>クリック</th>
+              <th>クリック率</th>
+              <th>CV</th>
+              <th>CVR</th>
+              <th>CPA</th>
+            </tr>
+            <tr>
+              <td>7月</td>
+              <td>996,558円</td>
+              <td>1,039</td>
+              <td>5.07%</td>
+              <td>60</td>
+              <td class="good">5.77%</td>
+              <td class="good">16,609円</td>
+            </tr>
+            <tr>
+              <td>8月</td>
+              <td>980,076円</td>
+              <td>955</td>
+              <td>4.61%</td>
+              <td>24</td>
+              <td class="bad">2.51%</td>
+              <td class="bad">40,837円</td>
+            </tr>
+            <tr>
+              <td>9月</td>
+              <td>977,999円</td>
+              <td>1,110</td>
+              <td>5.34%</td>
+              <td>36</td>
+              <td>3.24%</td>
+              <td>27,167円</td>
+            </tr>
+            <tr>
+              <td>10月</td>
+              <td>581,179円</td>
+              <td>542</td>
+              <td>3.56%</td>
+              <td>16</td>
+              <td class="bad">2.95%</td>
+              <td class="bad">36,324円</td>
+            </tr>
+            <tr>
+              <td>11月（20日まで）</td>
+              <td>453,649円</td>
+              <td>466</td>
+              <td>3.65%</td>
+              <td>11</td>
+              <td class="bad">2.36%</td>
+              <td class="bad">41,241円</td>
+            </tr>
+            <tr>
+              <th>合計</th>
+              <th>3,988,968円</th>
+              <th>4,111</th>
+              <th>4.57%</th>
+              <th>147</th>
+              <th>3.58%</th>
+              <th>27,136円</th>
+            </tr>
+          </table>
+        </div>
+        <p class="note">
+          11月分は、クリックから登録までの遅れがあるため今後少し増える可能性があります。
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>週別のCVRと、その週に行われた主な変更</h3>
+        <div id="wk"></div>
+        <div class="legend">
+          <span><i style="background: #1f6fd6"></i>CVR（%）</span
+          ><span><i style="background: #c8372d"></i>目標 5.4%</span
+          ><span
+            ><i style="background: #f0b34a"></i>入札戦略の変更があった週</span
+          ><span><i style="background: #8a94a8"></i>配信停止があった週</span>
+        </div>
+        <p class="note">
+          週のクリック数は37〜383と少なく、1週単位の数値はぶれます。傾向として読んでください。最初の週は7/1〜7/5、最後の週は11/16〜11/20の部分週です。
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>広告グループ別（費用の多い順）</h3>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th>広告グループ</th>
+              <th>費用</th>
+              <th>クリック</th>
+              <th>クリック率</th>
+              <th>CV</th>
+              <th>CVR</th>
+              <th>CPA</th>
+              <th class="l">広告の有効性</th>
+            </tr>
+            <tr>
+              <td>顕在_案件探し</td>
+              <td>1,285,441円</td>
+              <td>1,412</td>
+              <td>4.61%</td>
+              <td>38.50</td>
+              <td>2.73%</td>
+              <td class="bad">33,388円</td>
+              <td class="l">平均的</td>
+            </tr>
+            <tr>
+              <td>顕在_リモート案件</td>
+              <td>1,223,599円</td>
+              <td>1,210</td>
+              <td>6.47%</td>
+              <td>39.83</td>
+              <td>3.29%</td>
+              <td class="bad">30,718円</td>
+              <td class="l">非常に高い</td>
+            </tr>
+            <tr>
+              <td>競合_エージェント</td>
+              <td>587,647円</td>
+              <td>543</td>
+              <td>2.01%</td>
+              <td>18.33</td>
+              <td>3.38%</td>
+              <td class="bad">32,053円</td>
+              <td class="l">低い</td>
+            </tr>
+            <tr>
+              <td>指名検索</td>
+              <td>251,491円</td>
+              <td>270</td>
+              <td>13.60%</td>
+              <td>23.33</td>
+              <td>8.64%</td>
+              <td class="good">10,778円</td>
+              <td class="l">平均的</td>
+            </tr>
+            <tr>
+              <td>PHP</td>
+              <td>187,710円</td>
+              <td>185</td>
+              <td>6.44%</td>
+              <td>6.00</td>
+              <td>3.24%</td>
+              <td>31,285円</td>
+              <td class="l">高い</td>
+            </tr>
+            <tr>
+              <td>Python</td>
+              <td>182,071円</td>
+              <td>178</td>
+              <td>6.54%</td>
+              <td>7.00</td>
+              <td>3.93%</td>
+              <td>26,010円</td>
+              <td class="l">非常に高い</td>
+            </tr>
+            <tr>
+              <td>転職・働き方比較_202611</td>
+              <td>84,001円</td>
+              <td>55</td>
+              <td>4.37%</td>
+              <td>6.00</td>
+              <td>10.91%</td>
+              <td class="good">14,000円</td>
+              <td class="l">非常に高い</td>
+            </tr>
+            <tr>
+              <td>顕在_高単価</td>
+              <td>53,195円</td>
+              <td>89</td>
+              <td>6.29%</td>
+              <td>3.00</td>
+              <td>3.37%</td>
+              <td class="good">17,732円</td>
+              <td class="l">非常に高い</td>
+            </tr>
+            <tr>
+              <td>Flutter</td>
+              <td>50,902円</td>
+              <td>74</td>
+              <td>5.17%</td>
+              <td>3.00</td>
+              <td>4.05%</td>
+              <td class="good">16,967円</td>
+              <td class="l">高い</td>
+            </tr>
+            <tr>
+              <td>Java</td>
+              <td>28,599円</td>
+              <td>33</td>
+              <td>5.84%</td>
+              <td>0</td>
+              <td>0%</td>
+              <td>—</td>
+              <td class="l">平均的</td>
+            </tr>
+            <tr>
+              <td>その他9グループ計</td>
+              <td>54,311円</td>
+              <td>62</td>
+              <td>—</td>
+              <td>2.00</td>
+              <td>—</td>
+              <td>—</td>
+              <td class="l">—</td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          指名検索を除くと
+          <b>CVR 3.22%・CPA 30,221円</b
+          >です。費用の78%を占める上位3グループ（案件探し・リモート案件・競合）がいずれも
+          CPA 3万円超で、ここを直さない限り目標には届きません。
+        </p>
+      </div>
+
+      <h2>3. 悪化の原因（管理画面で確認できた事実）</h2>
+
+      <div class="card cause">
+        <h3>原因1　入札戦略を約3か月で15回切り替えている</h3>
+        <p>
+          7月は「目標コンバージョン単価 20,000円」で固定されており、実績 CPA
+          は16,609円でした。7月28日以降、目標の解除と再設定が繰り返されています。
+        </p>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th>日付</th>
+              <th class="l">キャンペーンの入札設定の変更</th>
+            </tr>
+            <tr>
+              <td>7/28</td>
+              <td class="l">目標CPA 20,000円を解除</td>
+            </tr>
+            <tr>
+              <td>8/3</td>
+              <td class="l">目標CPA 20,000円を再設定</td>
+            </tr>
+            <tr>
+              <td>8/16・8/18・8/19</td>
+              <td class="l">解除 → 再設定 → 解除（4日間で3回）</td>
+            </tr>
+            <tr>
+              <td>8/21</td>
+              <td class="l">最適化案の自動適用で目標CPA 22,684円に</td>
+            </tr>
+            <tr>
+              <td>9/1</td>
+              <td class="l">20,000円へ引き下げ</td>
+            </tr>
+            <tr>
+              <td>9/23・10/1</td>
+              <td class="l">解除 → 20,000円で再設定</td>
+            </tr>
+            <tr>
+              <td>10/15・10/19・10/21</td>
+              <td class="l">解除 → 25,000円 → 28,000円</td>
+            </tr>
+            <tr>
+              <td>10/29・10/30</td>
+              <td class="l">解除 → 「クリック数の最大化」へ変更</td>
+            </tr>
+            <tr>
+              <td>11/2</td>
+              <td class="l">
+                「コンバージョン数の最大化」＋目標CPA 28,000円へ戻す
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          自動入札は設定を変えるたびに学習をやり直します。週のコンバージョンが2〜10件のこのアカウントでは、平均6〜7日おきの変更だと学習が終わる前に次の変更が入ります。「クリック数の最大化」にした10/26の週は、クリック357に対して
+          CVR 1.31%でした。
+        </p>
+        <p class="note">
+          同じキーワード「フリー ランス 仕事 在宅」でも、CVR は7月 7.25% → 9月
+          3.67% → 10月
+          1.99%と下がっています。キーワードの入れ替えではなく、配信の質そのものが落ちたことを示します。
+        </p>
+      </div>
+
+      <div class="card cause">
+        <h3>原因2　キャンペーンの終了日切れで8月に2回止まった</h3>
+        <p>
+          終了日が7/31と8/12に設定されており、延長されたのはそれぞれ8/3朝と8/16未明でした。8/1〜8/3と8/13〜8/15の2回、配信が止まっています（表示回数もゼロ近くまで落ちています）。8月のコンバージョンは24件で、7月の60件から6割減りました。
+        </p>
+        <p class="note">終了日は9/28に「終了日なし」へ変更済みです。</p>
+      </div>
+
+      <div class="card cause">
+        <h3>原因3　成果の出ていたキーワードが削除・停止されている</h3>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th>キーワード</th>
+              <th class="l">現在の状態</th>
+              <th>費用</th>
+              <th>CV</th>
+              <th>CVR</th>
+              <th>CPA</th>
+            </tr>
+            <tr>
+              <td>フリー ランス 仕事 在宅</td>
+              <td class="l bad">削除済み</td>
+              <td>588,786円</td>
+              <td>27.83</td>
+              <td>5.02%</td>
+              <td>21,154円</td>
+            </tr>
+            <tr>
+              <td>アットエンジニア（社名）</td>
+              <td class="l warn">一時停止</td>
+              <td>204,462円</td>
+              <td>17.00</td>
+              <td>8.54%</td>
+              <td>12,027円</td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          「フリー ランス 仕事
+          在宅」は全コンバージョンの19%を1語で生んでいた最大の成果源で、7月単月では
+          CVR 7.25%・CPA
+          14,060円でした。社名キーワードは別のマッチタイプで代替されている可能性があるため、指名検索が現在も拾えているかの確認が必要です。
+        </p>
+      </div>
+
+      <div class="card cause">
+        <h3>原因4　関係の薄い検索語句に広く配信されている</h3>
+        <p>
+          4,111クリックに対して検索語句は17,431種類あります。主力キーワードの多くが「インテント
+          マッチ」（最も広い一致）で、次のような語句にも広告が出ていました。
+        </p>
+        <p>
+          <b>転職・求人媒体名：</b
+          >ビズリーチ、indeed、リクナビ、マイナビ、ランスタッド、エンゲージ　<b>／　職種違い：</b>動画編集
+          業務委託、完全在宅 データ入力 業務委託、高収入 求人、仕事 探し、スキル
+          販売、ココナラとは
+        </p>
+        <p>
+          これらの一部（ビズリーチ 4.5件、indeed
+          1件など）は登録まで進んでいますが、フリーランス案件を探すエンジニアではない可能性が高く、登録後の面談・参画につながっているかは管理画面からは分かりません。除外キーワードの追加は46回中39回が10〜11月に集中しており、それ以前はほぼ手つかずでした。
+        </p>
+      </div>
+
+      <div class="card cause">
+        <h3>
+          原因5　リンク先ページが3回入れ替わり、広告文とページの内容が合っていない
+        </h3>
+        <p>
+          全広告のリンク先が、登録ページ（/register）とトップページ（/）の間で
+          7/16・8/16・10/2
+          の3回切り替えられています。切り替えと同時期に入札変更や停止も起きているため、どちらが良いのかは判定できません。
+        </p>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th class="l">期間</th>
+              <th class="l">リンク先</th>
+              <th>クリック</th>
+              <th>CV</th>
+              <th>CVR</th>
+            </tr>
+            <tr>
+              <td>7/1〜7/12</td>
+              <td class="l">登録ページ</td>
+              <td>511</td>
+              <td>29</td>
+              <td>5.68%</td>
+            </tr>
+            <tr>
+              <td>7/20〜8/16</td>
+              <td class="l">トップページ</td>
+              <td>570</td>
+              <td>26</td>
+              <td>4.56%</td>
+            </tr>
+            <tr>
+              <td>8/17〜9/27</td>
+              <td class="l">登録ページ</td>
+              <td>1,651</td>
+              <td>48</td>
+              <td>2.91%</td>
+            </tr>
+            <tr>
+              <td>10/5〜11/20</td>
+              <td class="l">トップページ</td>
+              <td>968</td>
+              <td>24</td>
+              <td>2.48%</td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          現在のリンク先（トップページ）は、全広告グループ共通で1種類です。広告は「高単価フリーランス案件多数」「フルリモート案件も豊富」と約束していますが、ページ最上部の見出しは「業界最大級の感動体験をあなたに。」で、クリックした人が探している言葉が最初に目に入りません。登録フォームは必須項目が6つ（氏名・ふりがな・生年月日・電話番号・メールアドレス・パスワード）あります。
+        </p>
+      </div>
+
+      <div class="card cause" style="border-left-color: var(--amber)">
+        <h3>要確認　コンバージョンの計測状態</h3>
+        <p>
+          主計測の「登録完了(Mypage/initial)」（144件）のステータスが「要確認」、他2つが「設定が不適切」と表示されています。計測もれが起きているなら、8月以降の
+          CVR
+          低下の一部は実態ではなく計測の問題です。<b>社内の登録データと月別に突き合わせる</b>ことを最初に行ってください。また、企業向けの「企業開拓
+          申し込み完了」がメインの目標に混ざっています。
+        </p>
+      </div>
+
+      <h2>4. クリエイティブの変更履歴（直近3か月）</h2>
+      <div class="card">
+        <p class="lead">
+          広告文を実際に書き換えたのは、直近3か月で2日だけです（10/14 と
+          11/4）。
+        </p>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th>日付</th>
+              <th>件数</th>
+              <th class="l">内容</th>
+              <th class="l">種別</th>
+            </tr>
+            <tr>
+              <td>7/16</td>
+              <td>10</td>
+              <td class="l">リンク先を登録ページ → トップページへ変更</td>
+              <td class="l">リンク先のみ</td>
+            </tr>
+            <tr>
+              <td>8/16</td>
+              <td>6</td>
+              <td class="l">リンク先をトップページ → 登録ページへ変更</td>
+              <td class="l">リンク先のみ</td>
+            </tr>
+            <tr>
+              <td>10/2</td>
+              <td>16</td>
+              <td class="l">リンク先を登録ページ → トップページへ変更</td>
+              <td class="l">リンク先のみ</td>
+            </tr>
+            <tr>
+              <td>10/14</td>
+              <td>13</td>
+              <td class="l">
+                主要4グループの見出し3〜5本・説明文2〜3本を、グループの主題に合わせて差し替え。指名検索は見出し1本ずつの小修正を9回
+              </td>
+              <td class="l good">広告文の書き換え</td>
+            </tr>
+            <tr>
+              <td>11/4</td>
+              <td>2</td>
+              <td class="l">
+                新しい広告グループ2つ（転職・働き方比較／フリーランス独立）と広告を新規作成（見出し15本・説明文4本ずつ）
+              </td>
+              <td class="l good">新規作成</td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          7/1〜11/20の広告・アセット関連の変更は計47件で、すべてレスポンシブ検索広告の編集でした。うち32件はリンク先の変更だけで、文面は変わっていません。直近3か月（8/21以降）は31件・3日です。
+        </p>
+        <ul>
+          <li>広告文の更新頻度：<b>およそ6週間に1回</b>（3か月で2日）</li>
+          <li>
+            各広告グループの広告は<b>1本だけ</b>で、2案を並べて比べる運用はされていません
+          </li>
+          <li>
+            サイトリンク・コールアウト・画像などのアセットを手動で追加・変更した履歴は、この期間にありません
+          </li>
+          <li>
+            10/14は主要グループを同じ日にまとめて書き換えており、前後で入札設定も変わっているため、書き換えの効果は測れない状態です
+          </li>
+        </ul>
+        <h3>参考：期間全体の変更の内訳（510件）</h3>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th class="l">種類</th>
+              <th>件数</th>
+              <th class="l">補足</th>
+            </tr>
+            <tr>
+              <td class="l">外部ツール連携による自動記録</td>
+              <td>224</td>
+              <td class="l">HubSpot連携が毎日残す記録。運用上の変更ではない</td>
+            </tr>
+            <tr>
+              <td class="l">除外キーワードの追加</td>
+              <td>50</td>
+              <td class="l">うち約8割が10〜11月</td>
+            </tr>
+            <tr>
+              <td class="l">広告の変更・作成</td>
+              <td>47</td>
+              <td class="l">上の表のとおり</td>
+            </tr>
+            <tr>
+              <td class="l">キーワードの追加・停止・再開・削除</td>
+              <td>約80</td>
+              <td class="l">停止と再開の往復が多い</td>
+            </tr>
+            <tr>
+              <td class="l">入札戦略・目標CPAの変更</td>
+              <td>18</td>
+              <td class="l">キャンペーン15回＋指名検索グループ3回</td>
+            </tr>
+            <tr>
+              <td class="l">予算の引き上げ・引き下げ</td>
+              <td>20</td>
+              <td class="l">上げ下げがほぼ同数</td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          手を動かす量は多い一方、その大半が入札・予算・キーワードの上げ下げに使われ、広告文とページの改善にはほとんど使われていません。
+        </p>
+      </div>
+
+      <h2>5. 検証：「クリエイティブを高速で回せば目標を達成できる」か</h2>
+      <div class="card verdict">
+        <p class="lead">
+          判定：半分は正しい。更新頻度は確かに低く、上げるべきです。ただしクリエイティブだけでは
+          CVR 1.5倍には届かず、順番を誤ると効果も測れません。
+        </p>
+      </div>
+      <div class="grid2">
+        <div class="card">
+          <h3>仮説を支持する材料</h3>
+          <ul>
+            <li>
+              広告文の更新は6週間に1回、比較テストはゼロ。改善の余地は大きい
+            </li>
+            <li>
+              11/4に新しい切り口で作った「転職・働き方比較」は CVR 10.91%・CPA
+              14,000円（ただしクリック55・CV6件と少数）
+            </li>
+            <li>
+              費用の47%を占める「案件探し」「競合」の広告の有効性が「平均的」「低い」
+            </li>
+            <li>
+              競合グループのクリック率は2.01%と低く、品質スコア低下の表示が多数
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>仮説だけでは足りない理由</h3>
+          <ul>
+            <li>
+              目標水準を出した7月は、広告文を一切変えていない。悪化の原因は広告文の外にある
+            </li>
+            <li>
+              10/14の書き換え後、クリック率は9月5.34% →
+              10月3.56%に下がり、CVRも改善していない（同時期の入札変更と分離できない）
+            </li>
+            <li>
+              広告文が主に動かすのはクリック率で、CVRはページとフォーム、流入の質で決まる部分が大きい
+            </li>
+            <li>クリック数が少なく、テストの判定に時間がかかる（下記）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <h3>「高速」の現実的な上限</h3>
+        <p>
+          現在のクリックは月500前後です。CVR 3% → 4.5%
+          の差を統計的に確かめるには1案あたり約2,500クリックが必要で、アカウント全体の4.7か月分（4,111クリック）を超えます。つまり<b>CVRで広告文の勝ち負けを素早く判定することはできません</b>。クリック率で判定する場合も、4.5%
+          →
+          5.4%の差を見るのに1案あたり約9,000回の表示が必要で、最大グループ（月約6,600回表示）で1テストに約3か月かかります。
+        </p>
+        <p>
+          したがって「高速」は、細かい言い回しを大量に試すことではなく、<b>訴求の切り口が大きく違う2案を、主要3グループで3〜4週間ごとに入れ替える</b>という形が現実的です。入札とリンク先を固定した状態でないと、結果は読めません。
+        </p>
+        <p class="note">
+          <span class="pill pe">試算</span
+          >必要数は、有意水準5%・検出力80%での一般的な計算による概算です。
+        </p>
+      </div>
+
+      <h2>6. 目標までの道筋（試算）</h2>
+      <div class="card">
+        <div class="scroll">
+          <table>
+            <tr>
+              <th class="l">打ち手</th>
+              <th>CVRへの効果（見込み）</th>
+              <th class="l">根拠</th>
+            </tr>
+            <tr>
+              <td class="l">A. 入札の固定・停止の防止・主力キーワードの復旧</td>
+              <td>× 1.25</td>
+              <td class="l">
+                7月（5.77%）と期間平均（3.58%）の差の半分が戻ると仮定
+              </td>
+            </tr>
+            <tr>
+              <td class="l">B. 検索語句の整理（除外と一致の絞り込み）</td>
+              <td>× 1.10</td>
+              <td class="l">関係の薄いクリックを1割減らすと仮定</td>
+            </tr>
+            <tr>
+              <td class="l">C. ページとフォームの改善</td>
+              <td>× 1.10</td>
+              <td class="l">広告とページの一致、入力項目の削減</td>
+            </tr>
+            <tr>
+              <td class="l">D. クリエイティブの継続テスト</td>
+              <td>× 1.05</td>
+              <td class="l">ほかにクリック率 +10〜20% を見込む</td>
+            </tr>
+            <tr>
+              <th class="l">合計</th>
+              <th>× 1.59</th>
+              <th class="l">
+                CVR 3.58% → 約5.7%、CPA 約17,000円（クリック単価970円の場合）
+              </th>
+            </tr>
+          </table>
+        </div>
+        <p class="note">
+          <span class="pill pe">試算</span
+          >倍率は筆者の仮定で、実測値ではありません。Aが最大の要素で、ここが戻らなければ
+          B〜D を足しても目標には届きません。
+        </p>
+        <p>
+          CPAが18,100円以下で2週間安定したら、日予算を2週間ごとに20%ずつ上げてコンバージョン数を伸ばします。Googleの比較表示では、類似ビジネスの週あたりクリックは1,434（当アカウントは135）で、配信を増やす余地はあります。
+        </p>
+      </div>
+
+      <h2>7. 具体的にやること</h2>
+
+      <div class="card phase">
+        <div class="when">今週中（1〜3日）</div>
+        <h3>止血と土台の固定</h3>
+        <ol class="steps">
+          <li>
+            <b>計測の確認。</b
+            >社内の登録件数（7〜11月・月別）と管理画面の147件を突き合わせる。「登録完了」タグの「要確認」を解消し、「企業開拓
+            申し込み完了」をメインの目標から外す。
+          </li>
+          <li>
+            <b>入札戦略を固定。</b>「コンバージョン数の最大化＋目標CPA
+            28,000円」のまま、最低4週間は戦略の種類を変えない。目標値を動かすのは2週間に1回まで、幅は15%以内とする。
+          </li>
+          <li>
+            <b>主力キーワードを戻す。</b>「フリーランス 仕事
+            在宅」をフレーズ一致で再登録する。社名「アットエンジニア」の検索に広告が出ているかを確認し、出ていなければ完全一致で再開する。
+          </li>
+          <li>
+            <b>自動で変わる設定を止める。</b
+            >最適化案の自動適用は11/13に一部停止済み。キーワードの自動追加と目標CPAの自動変更が残っていないか確認する（11/2〜11/8にも2件自動適用されています）。
+          </li>
+          <li>
+            <b>終了日と残高。</b
+            >キャンペーンの終了日が「なし」のままか、支払い残高で止まらないかを確認する。
+          </li>
+        </ol>
+      </div>
+
+      <div class="card phase">
+        <div class="when">1〜2週目</div>
+        <h3>お金の流れ先を直す</h3>
+        <ol class="steps">
+          <li>
+            <b>除外キーワードを一括登録。</b
+            >転職・求人媒体名、クラウドソーシング名、エンジニア以外の職種（データ入力、動画編集、デザイナー、派遣、日雇い、アルバイト）を共有の除外リストにして全グループへ適用する。
+          </li>
+          <li>
+            <b>広すぎる一致を絞る。</b>CPAが4万円前後の「エンジニア
+            求人」（費用203,913円・CPA 40,783円）、「フリーランススタート」（CPA
+            45,723円）、「日雇い エンジニア」（CPA
+            45,027円）はフレーズ一致へ切り替えるか停止する。
+          </li>
+          <li>
+            <b>成果ゼロの出費を止める。</b
+            >費用1万円以上でコンバージョン0件のキーワード（フルリモート
+            業務委託、フリーランス エージェント
+            エンジニア、PE-BANK、エンジニアスタイル、php リモート 案件、c++ 求人
+            など、合計約13万円）と Java グループを停止する。
+          </li>
+          <li>
+            <b>成果の良い語に予算を寄せる。</b>CPA 2万円未満の語（業務委託
+            高単価 13,685円、フリーランスエンジニア 転職 14,000円、flutter
+            16,967円、フリー ランス エンジニア 仕事 探し 18,691円、フリーランス
+            エンジニア 案件
+            19,140円）を完全一致・フレーズ一致でも登録し、表示機会を増やす。
+          </li>
+          <li>
+            <b>指名検索の目標CPAを分ける。</b>指名は実績
+            10,778円なので、全体の目標値に引きずられないよう別キャンペーンに分けるか、グループ単位の目標を15,000円で固定する。
+          </li>
+        </ol>
+      </div>
+
+      <div class="card phase">
+        <div class="when">2〜6週目</div>
+        <h3>ページとフォームを直す（CVRに最も効く部分）</h3>
+        <ol class="steps">
+          <li>
+            <b>広告グループごとの着地ページを用意。</b
+            >まず費用上位の3種類（案件探し・リモート・高単価）。ページ最上部の見出しを広告の約束と同じ言葉にする（例：「フルリモートのエンジニア案件」「月80万円以上の高単価案件」）。
+          </li>
+          <li>
+            <b>フォームを2段階に。</b
+            >1段階目はメールアドレスと得意な言語だけ。ふりがな・生年月日・パスワードは登録後に回す。
+          </li>
+          <li>
+            <b>スマートフォンでの表示を確認。</b
+            >クリックの72%がスマートフォンです。登録フォームが最初の画面に出るか、入力しやすいかを実機で確認する。
+          </li>
+          <li>
+            <b>リンク先の比較は「テスト」機能で。</b
+            >Google広告のキャンペーンのテスト（50%ずつ配信）で、登録ページ・トップページ・新ページを同時期に比べる。日付で切り替える方法は、今回のように結論が出ません。
+          </li>
+        </ol>
+      </div>
+
+      <div class="card phase">
+        <div class="when">並行して継続（3〜4週間サイクル）</div>
+        <h3>クリエイティブを計画的に回す</h3>
+        <ol class="steps">
+          <li>
+            <b>主要3グループに広告を2本ずつ。</b
+            >訴求の切り口を大きく変えた2案を常に並べる（単価／リモート／スピード「最短1日」／非公開案件／転職との比較）。11/4の「転職・働き方比較」の切り口は有望なので、主力グループにも展開する。
+          </li>
+          <li>
+            <b>判定ルールを先に決める。</b
+            >1案あたり表示3,000回または3週間で、クリック率と「表示あたりのコンバージョン」を比べ、負けた方を次の案に入れ替える。
+          </li>
+          <li>
+            <b>毎週のアセット点検。</b
+            >評価が「低」の見出し・説明文を週1回入れ替える。サイトリンク・コールアウト・画像を追加する（期間中の手動追加はゼロ）。
+          </li>
+          <li>
+            <b>競合グループを作り直す。</b
+            >広告の有効性「低い」・クリック率2.01%。「他社と併用できる」「登録だけで非公開案件」など比較検討中の人向けの文面にする。
+          </li>
+          <li>
+            <b>1回に変えるのは1つ。</b
+            >広告のテスト中は入札・予算・リンク先を動かさない。変更は日付・内容・狙いを1行ずつ記録する。
+          </li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h3>進み具合の判定基準</h3>
+        <div class="scroll">
+          <table>
+            <tr>
+              <th class="l">時点</th>
+              <th>CVR</th>
+              <th>CPA</th>
+              <th class="l">次の動き</th>
+            </tr>
+            <tr>
+              <td class="l">2週間後</td>
+              <td>3.5%以上</td>
+              <td>28,000円以下</td>
+              <td class="l">目標CPAを24,000円へ</td>
+            </tr>
+            <tr>
+              <td class="l">6週間後</td>
+              <td>4.5%以上</td>
+              <td>22,000円以下</td>
+              <td class="l">目標CPAを21,000円へ、新ページのテスト開始</td>
+            </tr>
+            <tr>
+              <td class="l">10〜12週間後</td>
+              <td>5.4%以上</td>
+              <td>18,100円以下</td>
+              <td class="l">日予算を2週間ごとに20%ずつ増額</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <h2>8. このレポートの前提と限界</h2>
+      <div class="card">
+        <p>
+          <span class="pill pf">事実</span
+          >2〜4章の数値と変更履歴は、2026年11月20日時点の Google
+          広告管理画面（期間：2026年7月1日〜11月20日）の表示値です。週別の数値は概要グラフの表示値、ページの内容は
+          at-engineer.jp のパソコン表示で確認しました。
+        </p>
+        <p>
+          <span class="pill pe">推定</span
+          >3章の「原因」は、時期の一致と同一キーワードの推移から見た筆者の判断で、因果関係を実験で確かめたものではありません。5〜6章の必要数・倍率は試算です。
+        </p>
+        <ul>
+          <li>
+            検索語句は全17,431種類のうちクリック上位40件、キーワードは上位46件と削除済みの上位2件を確認しました
+          </li>
+          <li>時間帯・地域・年齢・競合との表示シェアは詳しく見ていません</li>
+          <li>
+            登録後の面談・案件参画のデータは管理画面になく、コンバージョンの質は評価できていません
+          </li>
+          <li>スマートフォンでのページ表示は未確認です</li>
+          <li>管理画面の設定は一切変更していません（閲覧のみ）</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var d = [
+          ["7/1", 146, 16, ""],
+          ["7/6", 365, 13, ""],
+          ["7/13", 191, 10, ""],
+          ["7/20", 87, 8, ""],
+          ["7/27", 250, 13, "b"],
+          ["8/3", 151, 3, "sb"],
+          ["8/10", 82, 2, "s"],
+          ["8/17", 310, 8, "b"],
+          ["8/24", 383, 10, ""],
+          ["8/31", 240, 6, "b"],
+          ["9/7", 171, 9, ""],
+          ["9/14", 180, 6, ""],
+          ["9/21", 367, 9, "b"],
+          ["9/28", 220, 10, "b"],
+          ["10/5", 37, 3, ""],
+          ["10/12", 104, 3, "b"],
+          ["10/19", 98, 3.33, "b"],
+          ["10/26", 357, 4.67, "b"],
+          ["11/2", 148, 2, "b"],
+          ["11/9", 117, 4, ""],
+          ["11/16", 107, 4, ""],
+        ];
+        var W = 1000,
+          H = 380,
+          L = 56,
+          R = 16,
+          T = 20,
+          B = 58,
+          pw = W - L - R,
+          ph = H - T - B,
+          max = 12,
+          bw = pw / d.length;
+        function y(v) {
+          return T + ph - (Math.min(v, max) / max) * ph;
+        }
+        var s =
+          '<svg viewBox="0 0 ' +
+          W +
+          " " +
+          H +
+          '" role="img" aria-label="週別コンバージョン率の推移">';
+        for (var g = 0; g <= 12; g += 3) {
+          s +=
+            '<line x1="' +
+            L +
+            '" x2="' +
+            (W - R) +
+            '" y1="' +
+            y(g) +
+            '" y2="' +
+            y(g) +
+            '" stroke="#d9e0ec"/><text x="' +
+            (L - 8) +
+            '" y="' +
+            (y(g) + 5) +
+            '" text-anchor="end" font-size="17" fill="#52607a">' +
+            g +
+            "%</text>";
+        }
+        d.forEach(function (r, i) {
+          var c = (r[2] / r[1]) * 100,
+            x = L + i * bw;
+          if (r[3].indexOf("b") >= 0)
+            s +=
+              '<rect x="' +
+              (x + 3) +
+              '" y="' +
+              (T + ph + 6) +
+              '" width="' +
+              (bw - 6) +
+              '" height="7" rx="3" fill="#f0b34a"/>';
+          if (r[3].indexOf("s") >= 0)
+            s +=
+              '<rect x="' +
+              (x + 3) +
+              '" y="' +
+              (T + ph + 16) +
+              '" width="' +
+              (bw - 6) +
+              '" height="7" rx="3" fill="#8a94a8"/>';
+          s +=
+            '<rect x="' +
+            (x + 6) +
+            '" y="' +
+            y(c) +
+            '" width="' +
+            (bw - 12) +
+            '" height="' +
+            (T + ph - y(c)) +
+            '" rx="3" fill="' +
+            (c >= 5.4 ? "#1c8a55" : "#1f6fd6") +
+            '"/>';
+          s +=
+            '<text x="' +
+            (x + bw / 2) +
+            '" y="' +
+            (y(c) - 6) +
+            '" text-anchor="middle" font-size="17" fill="#16233a">' +
+            c.toFixed(1) +
+            "</text>";
+          if (i % 2 == 0)
+            s +=
+              '<text x="' +
+              (x + bw / 2) +
+              '" y="' +
+              (H - 10) +
+              '" text-anchor="middle" font-size="17" fill="#52607a">' +
+              r[0] +
+              "</text>";
+        });
+        s +=
+          '<line x1="' +
+          L +
+          '" x2="' +
+          (W - R) +
+          '" y1="' +
+          y(5.4) +
+          '" y2="' +
+          y(5.4) +
+          '" stroke="#c8372d" stroke-width="2" stroke-dasharray="7 5"/>';
+        s += "</svg>";
+        document.getElementById("wk").innerHTML = s;
+      })();
+    </script>
+  </body>
+</html>
